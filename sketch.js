@@ -2,16 +2,21 @@ var startLength;
 var scaleFactor;
 var minLength;
 
+var angleSlider;
+
 function setup() {
 	createCanvas(800, 800);
+	angleSlider = createSlider(0, PI, (PI / 4), 0);
 
 	startLength = width / 4;
 	scaleFactor = 0.67;
-	angle = (PI / 5);
+	angle = angleSlider.value();
 	minLength = 4;
 }
 
 function draw() {
+	angle = angleSlider.value();
+
 	background(51);
 
 	stroke(255);
