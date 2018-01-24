@@ -1,25 +1,29 @@
 var numTrees;
 var startLength;
 var scaleFactor;
+var angle;
 var minLength;
 
 var numTreesInput;
+var startLengthSlider;
+var scaleFactorSlider;
 var angleSlider;
 
 function setup() {
 	createCanvas(800, 800);
 	numTreesInput = createInput("3");
 	numTreesInput.input(inputEvent);
+	startLengthSlider = createSlider(0, (width / 3), (width / 5), 0);
 	angleSlider = createSlider(0, PI, (PI / 4), 0);
 
 	numTrees = 3;
-	startLength = width / 7;
 	scaleFactor = 0.67;
 	angle = angleSlider.value();
 	minLength = 4;
 }
 
 function draw() {
+	startLength = startLengthSlider.value();
 	angle = angleSlider.value();
 
 	background(51);
